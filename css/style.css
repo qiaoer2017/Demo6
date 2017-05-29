@@ -4,17 +4,96 @@ body {
 
 }
 
+.main {
+    width: 1200px;
+    height: 460px;
+    margin: 30px auto;
+    overflow: hidden;
+    position: relative;
+}
+
 .banner {
     width: 1200px;
     height: 460px;
+    overflow: hidden;
+    position: relative;
 }
 
 .banner-slide {
     width: 1200px;
     height: 460px;
     background-repeat: no-repeat;
+    position: absolute;
+    display: none;
 }
 
 .slide1 {
-    background-image: url("images/1.jpg");
+    background-image: url("../images/1.jpg");
+}
+
+.slide2 {
+    background-image: url("../images/2.jpg");
+}
+
+.slide3 {
+    background-image: url("../images/3.jpg");
+}
+
+.slide4 {
+    background-image: url("../images/4.jpg");
+}
+
+.slide5 {
+    background-image: url("../images/5.jpg");
+}
+
+.slide-active {
+    display: block;
+}
+
+.button {
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    top: 50%;
+    margin-top: -40px;
+    background: rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 80px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.button:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.prev {
+    left: 244px;
+}
+
+.next {
+    right: 0;
+}
+
+.dots {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    text-align: right;
+}
+
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    margin-left: 8px;
+    border-radius: 7px;
+    border: 2px solid #ffffff;
+}
+
+.dots .active {
+    background-color: #fff;
 }
