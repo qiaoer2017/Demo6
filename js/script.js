@@ -1,3 +1,4 @@
+"use strict";
 (function () {
     var timer = null;
     var index = 0;
@@ -8,8 +9,38 @@
     var prev = byId('prev');
     var next = byId('next');
 
+
     var len = pics.length;
 
+    var subMenu = byId("sub-menu");
+    var innerBoxs = subMenu.getElementsByClassName('inner-box');
+    var menu = byId("menu-content");
+    var menuItems = menu.getElementsByClassName("menu-item");
+    for (var i = 0; i < menuItems.length; i++) {
+        menuItems[i].setAttribute('data-index', i);
+        menuItems[i].onmouseover = function () {
+            var index = this.getAttribute('data-index');
+            for (var j = 0; j < innerBoxs.length; j++) {
+                innerBoxs[j].style.display = "none";
+                menuItems[j].style.background = "none";
+            }
+            subMenu.className = "sub-menu";
+            innerBoxs[index].style.display = 'block';
+            menuItems[index].style.background = "rgba(0, 0, 0, 0.3)";
+        };
+    }
+
+    menu.onmouseout = function () {
+        subMenu.className = "sub-menu hide";
+    };
+
+    subMenu.onmouseover = function () {
+        this.className = "sub-menu";
+    };
+
+    subMenu.onmouseout = function () {
+        this.className = "sub-menu hide";
+    };
 
     slideImg();
     main.onmouseout();
